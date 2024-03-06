@@ -1,0 +1,77 @@
+{
+  "fulfillment_orders": [
+    {
+      "id": 6674704662812,
+      "shop_id": 83950764316,
+      "order_id": 5719667343644,
+      "assigned_location_id": 94701748508,
+      "request_status": "unsubmitted",
+      "status": "open",
+      "supported_actions": [
+        "create_fulfillment",
+        "move",
+        "hold"
+      ],
+      "destination": {
+        "id": 6211583607068,
+        "address1": "160 Saint Viateur Street East",
+        "address2": null,
+        "city": "Montréal",
+        "company": null,
+        "country": "Canada",
+        "email": "elizabeth.foucault@frankandoak.com",
+        "first_name": "Lizbeth",
+        "last_name": "F",
+        "phone": "514-312-1962",
+        "province": "Quebec",
+        "zip": "H2T 1A8"
+      },
+      "line_items": [
+        {
+          "id": 14754406760732,
+          "shop_id": 83950764316,
+          "fulfillment_order_id": 6674704662812,
+          "quantity": 1,
+          "line_item_id": 14595803971868,
+          "inventory_item_id": 49270695199004,
+          "fulfillable_quantity": 1,
+          "variant_id": 47226682802460
+        },
+        {
+          "id": 14754406793500,
+          "shop_id": 83950764316,
+          "fulfillment_order_id": 6674704662812,
+          "quantity": 1,
+          "line_item_id": 14595804004636,
+          "inventory_item_id": 49270705127708,
+          "fulfillable_quantity": 1,
+          "variant_id": 47226692731164
+        }
+      ],
+      "international_duties": null,
+      "fulfill_at": "2024-02-20T10:00:00-05:00",
+      "fulfill_by": null,
+      "fulfillment_holds": [],
+      "created_at": "2024-02-20T10:50:26-05:00",
+      "updated_at": "2024-02-20T10:50:26-05:00",
+      "delivery_method": {
+        "id": 716620497180,
+        "method_type": "shipping",
+        "min_delivery_date_time": null,
+        "max_delivery_date_time": null
+      },
+      "assigned_location": {
+        "address1": "160 Saint Viateur Street East",
+        "address2": "702",
+        "city": "Montréal",
+        "country_code": "CA",
+        "location_id": 94701748508,
+        "name": "ECOM Inventory",
+        "phone": "",
+        "province": "Quebec",
+        "zip": "H2T 1A8"
+      },
+      "merchant_requests": []
+    }
+  ]
+}

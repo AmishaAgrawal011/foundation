@@ -1,0 +1,76 @@
+{
+  "fulfillment_orders": [
+    {
+      "id": 6652146614525,
+      "shop_id": 6973849727,
+      "order_id": 5539164946685,
+      "assigned_location_id": 17715232895,
+      "request_status": "unsubmitted",
+      "status": "open",
+      "supported_actions": [
+        "create_fulfillment",
+        "hold"
+      ],
+      "destination": {
+        "id": 6190704132349,
+        "address1": "Indore Junction Chhoti Gwaltoli",
+        "address2": null,
+        "city": "Indore",
+        "company": null,
+        "country": "India",
+        "email": "amisha.agrawal@hotwax.co",
+        "first_name": "Amisha",
+        "last_name": "test",
+        "phone": null,
+        "province": "Madhya Pradesh",
+        "zip": "452007"
+      },
+      "line_items": [
+        {
+          "id": 13934893793533,
+          "shop_id": 6973849727,
+          "fulfillment_order_id": 6652146614525,
+          "quantity": 1,
+          "line_item_id": 13695165268221,
+          "inventory_item_id": 45995647271165,
+          "fulfillable_quantity": 1,
+          "variant_id": 43899536572669
+        },
+        {
+          "id": 13934893826301,
+          "shop_id": 6973849727,
+          "fulfillment_order_id": 6652146614525,
+          "quantity": 2,
+          "line_item_id": 13695165300989,
+          "inventory_item_id": 45995647271165,
+          "fulfillable_quantity": 2,
+          "variant_id": 43899536572669
+        }
+      ],
+      "international_duties": null,
+      "fulfill_at": "2024-02-26T06:00:00-05:00",
+      "fulfill_by": null,
+      "fulfillment_holds": [],
+      "created_at": "2024-02-26T06:08:33-05:00",
+      "updated_at": "2024-02-26T06:08:33-05:00",
+      "delivery_method": {
+        "id": 742483132669,
+        "method_type": "shipping",
+        "min_delivery_date_time": null,
+        "max_delivery_date_time": null
+      },
+      "assigned_location": {
+        "address1": "175 S Main St Suite 1310",
+        "address2": "",
+        "city": "Salt Lake City",
+        "country_code": "US",
+        "location_id": 17715232895,
+        "name": "Online Store",
+        "phone": "",
+        "province": "Utah",
+        "zip": "84111"
+      },
+      "merchant_requests": []
+    }
+  ]
+}

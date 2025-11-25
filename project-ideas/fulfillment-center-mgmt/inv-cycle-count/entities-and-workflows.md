@@ -8,27 +8,26 @@
 - **Role**: Represents a store-wide count run (e.g., Annual Hard Count).
 - **WorkEffortPurposeType**: HARD_COUNT, DIRECTED_COUNT
 - **Why it matters**: Gives every session a shared context for planning, reporting, and audit.
-- **Status Lifecycle** (for type `INVENTORY_COUNT_RUN`):
-  - `PLANNED → IN_PROGRESS → COMPLETED → CLOSED` (with `CANCELLED` as an exit path).
+- **Status Lifecycle** (for type `CYCLE_COUNT_RUN`):
+  - `CREATED → IN_PROGRESS → COMPLETED → CLOSED` (with `CANCELLED` as an exit path).
   - This lifecycle controls when sessions can be created, submitted, and included in reporting.
 - **Allowed Transitions**:
-  - `PLANNED → IN_PROGRESS`
+  - `CREATED → IN_PROGRESS`
   - `IN_PROGRESS → COMPLETED`
   - `COMPLETED → CLOSED`
-  - `PLANNED/IN_PROGRESS/COMPLETED → CANCELLED`
+  - `CREATED/IN_PROGRESS/COMPLETED → CANCELLED`
   - **Not allowed**: moving backward (e.g., `COMPLETED → IN_PROGRESS`).
 
 ### B. InventoryCountImport (counting session)
 - **Role**: One record per staff session (one person counting a portion of the store during the run).
 - **Key ideas**: Basic lifecycle, session approval controls inclusion.
 - **Status Lifecycle**:
-  - `CREATED' → ASSIGNED → SUBMITTED → APPROVED` (with `VOID` as an exit path).
+  - `CREATED' → ASSIGNED → SUBMITTED` (with `VOID` as an exit path).
 - **Allowed Transitions**:
   - `CREATED → ASSIGNED`
   - `ASSIGNED → SUBMITTED`
-  - `SUBMITTED → APPROVED` or `SUBMITTED → VOID`
-  - `APPROVED → VOID` (only by store manager for corrections)
-  - **Not allowed**: moving from `APPROVED` back to `SUBMITTED`.
+  - `SUBMITTED → VOIDED`
+  - **Not allowed**: moving from `VOIDED` back to `SUBMITTED`.
 
 ### C. InventoryCountImportItem (count lines)
 - **Role**: One line per product counted in a session; optional association to a store location.
@@ -91,15 +90,14 @@
 
 ### Workflow 3: Submit & Approve Sessions
 1. Staff marks session **SUBMITTED** when done.
-2. Store manager reviews and sets session to **APPROVED** (or **VOID** if incorrect).
-3. Inclusion for reporting is **only** sessions with status **APPROVED**.
+2. Store manager reviews and sets session to **VOID** if incorrect.
 
 **Value**: Operational control rests with store manager; easy to explain and enforce.
 
 ---
 
 ### Workflow 4: Consolidated Count View (for HQ & Store)
-1. The system aggregates **approved** sessions within a **WorkEffort** to show counted quantity **per product per facility**.
+1. The system aggregates **submitted** sessions within a **WorkEffort** to show counted quantity **per product per facility**.
 2. **Not-Found With On-Hand** Aggregate to a per-product counted QOH and compare to system QOH; anything with system > 0 & counted = 0 should be highlighted in the variance preview.
 3. This is a **computed view** (no persistent roll-up in Phase 1).
 4. Reports can highlight potential overlaps (informational only) without blocking approval.
@@ -109,7 +107,7 @@
 ---
 
 ### Workflow 5: Corrective Actions (Operational)
-1. If a session was approved by mistake, manager can **VOID** it.
+1. If a session was submitted by mistake, manager can **VOID** it.
 2. If an area needs recounting, create a **new session** to capture the fresh count.
 3. Run-level dashboards reflect only approved sessions, so corrections are immediate.
 

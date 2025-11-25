@@ -8,7 +8,7 @@
 - Ability to filter by:  
   - SKU, category, brand.  
   - Location (if facility locations are tracked).  
-  - Assignment status (Unassigned, Assigned, Completed).  
+  - Assignment status (Created, Assigned, Submitted, Voided).  
 
 ---
 

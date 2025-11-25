@@ -11,7 +11,7 @@ This document captures the **two primary business stories** that motivate and sh
 - This process is typically mandated by finance and audit requirements.
 
 ### Workflow
-1. The **Head of Retail** schedules a count run for each store (`WorkEffort` of type `INVENTORY_COUNT_RUN`).
+1. The **Head of Retail** schedules a count run for each store (`WorkEffort` of type `CYCLE_COUNT_RUN`).
 2. The **Store Manager** organizes the team to perform the count within a limited time window (e.g., Dec 31–Jan 2).
 3. Each staff member is assigned a physical area (sales floor, backroom, etc.) to ensure coverage and avoid double counting.
 4. Staff perform a full count of their assigned area, logging counts in `InventoryCountImport` and `InventoryCountImportItem`.

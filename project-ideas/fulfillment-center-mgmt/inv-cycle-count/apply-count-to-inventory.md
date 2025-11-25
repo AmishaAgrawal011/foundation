@@ -14,8 +14,10 @@ This document builds on **Foundational Cycle Count** by enabling the application
   - `varianceQuantity` (`counted - system`)
   - `decisionReasonEnumId` – why the decision was made
   - `decisionOutcomeEnumId` – APPLIED or SKIPPED
-  - `inventoryItemVarianceId` (when APPLIED)
-  - `decidedByUserLoginId`, `decidedDateTime`
+  - `inventoryItemId` (when APPLIED)
+  - `physicalInventoryId`(when APPLIED)
+  - `decidedByUserLoginId`,
+  - `decidedDateTime`
   - Optional comments
 
 - **Structured enums (Phase 1.1 set)**:
